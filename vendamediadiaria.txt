@@ -1,0 +1,48 @@
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args)
+    {
+    Scanner teclado = new Scanner(System.in);
+    
+    System.out.println(" Digite o nome do produto:");
+    String nome = teclado.next();
+    
+    System.out.println("\n Digite o primeiro mes:");
+    int mes1 = teclado.nextInt();
+    
+    System.out.println("\n Digite o segundo mes:");
+    int mes2 = teclado.nextInt();
+    
+    System.out.println("\n Digite o terceiro mes:");
+    int mes3 = teclado.nextInt();
+    
+    System.out.println("\n Digite o tempo de reposição:");
+    int tr = teclado.nextInt();
+    
+    System.out.println("\n Digite o lote de reposição:");
+    int lr = teclado.nextInt();
+
+    System.out.println("\n Digite o estoque atual:");
+    int ea = teclado.nextInt();
+    
+    int VDM = ((mes1+mes2+mes3)/3)/25;
+    int emin = (tr*VDM);
+    int emax = (lr + emin);
+
+    System.out.println("\n vendas do 1° mes:" + mes1);
+    System.out.println("\n vendas do 2° mes:" + mes2);
+    System.out.println("\n vendas do 3° mes:" + mes3);
+    System.out.println("\n Venda média diária:" + VDM);
+    System.out.println("\n Estoque mínimo:" + emin);
+    System.out.println("\n Estoque máximo:" + emax);
+    
+    if (ea > emin){
+        System.out.println("\n Não comprar");
+    } 
+    else {
+        System.out.println("\n Comprar");
+    } 
+    
+    }
+}
